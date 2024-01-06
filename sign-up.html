@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/fav_icon_blue.svg"
+      type="image/x-icon"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/sign-up.css" />
+  </head>
+  <body onload="init()">
+    <div class="toast">Ich bin ein toast</div>
+    <header>
+      <img src="./assets/img/join-logo-white.svg" alt="" />
+    </header>
+    <main>
+      <div class="login-form-wrapper">
+        <div class="arrow-left-container" onclick="goBackToLogin()">
+          <img class="arrow-left" src="./assets/img/arrow-left.svg" />
+        </div>
+        <h1>Sign up</h1>
+        <form onsubmit="register(event)">
+          <div class="name-wrapper">
+            <input
+              class="name-input"
+              id="name-input"
+              type="name"
+              placeholder="Name"
+              required
+            />
+            <img src="./assets/img/person.svg" alt="" />
+          </div>
+          <div class="email-wrapper">
+            <input
+              class="email-input"
+              id="email-input"
+              type="email"
+              placeholder="Email"
+              required
+            />
+            <img src="./assets/img/mail.svg" alt="" />
+          </div>
+          <div class="password-wrapper">
+            <input
+              class="password-input"
+              type="password"
+              name=""
+              id="pw-password-input"
+              placeholder="Password"
+              required
+            /><img
+              class="toggle-password-btn"
+              src="./assets/img/lock.svg"
+              alt=""
+              onclick="togglePassword('pw')"
+            />
+          </div>
+          <div class="password-wrapper">
+            <input
+              class="confirm-password-input"
+              type="password"
+              name=""
+              id="confirm-password-input"
+              placeholder="Confirm Password"
+              required
+            /><img
+              class="toggle-password-btn"
+              src="./assets/img/lock.svg"
+              alt=""
+              onclick="togglePassword('confirm')"
+            />
+          </div>
+
+          <div class="privacy-policy-wrapper">
+            <input
+              style="width: 12px"
+              type="checkbox"
+              id="privacy-policy"
+              name="privacy-policy"
+              required
+            />
+            <label for="privacy-policy"
+              >I accept the
+              <a
+                onclick="redirectToPrivacyPolicy()"
+                class="privacy-policy-link"
+                href="./privacy_policy.html"
+                >Privacy policy</a
+              ></label
+            >
+          </div>
+          <div class="btn-wrapper">
+            <button class="login-btn">Sign up</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <a onclick="redirectToPrivacyPolicy()">Privacy Policy</a
+      ><a href="./legal_notice.html">Legal Notice</a>
+    </footer>
+    <!-- <script src="./assets/js/login-new.js"></script> -->
+    <script src="./assets/js/register.js"></script>
+    <script src="./assets/js/SignUp.js"></script>
+  </body>
+</html>

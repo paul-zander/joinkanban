@@ -1,0 +1,473 @@
+body {
+  margin: 0;
+  background-color: rgb(69, 137, 255);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.headerSignupImage {
+  width: 100px;
+  height: 121px;
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}
+
+.mainContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 30px;
+  margin-top: 200px;
+  align-items: center;
+  padding: 48px 88px;
+  /* height: 510px; */
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 35px;
+  background: var(--white, #fff);
+  border-radius: 30px;
+}
+
+.h1-container {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  color: #000;
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  text-underline-offset: 20px;
+  line-height: 120%;
+  margin: 0;
+  text-decoration: underline;
+  text-decoration-color: rgb(69, 137, 255);
+  padding: 16px;
+}
+
+.labelColor {
+  font-size: 14px;
+  color: #666;
+  padding: 12px;
+}
+
+input {
+  border-bottom: 1px solid var(--style, #d1d1d1);
+  background: #fff;
+  display: flex;
+  width: 380px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 12px 21px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.name-wrapper,
+.email-wrapper,
+.confirm-password-wrapper,
+.password-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d1d1d1;
+  padding: 12px 21px 12px 21px;
+  border: 0px, 0px, 1px, 0px;
+  gap: 10px;
+  width: 100%;
+  font-size: 19px;
+}
+
+.name-input,
+.email-input,
+.password-input,
+.confirm-password-input {
+  border: none;
+  font-family: "Open Sans";
+  outline: none;
+  font-size: 19px;
+}
+
+.email-input::placeholder,
+.password-input::placeholder {
+  color: #d1d1d1;
+  font-size: 19px;
+}
+
+.toggle-password-btn {
+  cursor: pointer;
+}
+
+/* .inputname {
+  background-image: url("/assets/img/person.svg");
+  flex-shrink: 0;
+  background-position: 380px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  font-size: 19px;
+  font-weight: 400;
+  font-family: "Open Sans";
+  color: var(--style, #000000);
+  font-style: normal;
+  line-height: 120%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: rgb(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.inputemail {
+  border-color: rgb(0, 0, 0, 0.2);
+  background-image: url("/assets/img/mail.svg");
+  flex-shrink: 0;
+  background-position: 380px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--style, #000000);
+  font-family: Open Sans;
+  font-style: normal;
+  line-height: 120%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: "Open Sans", sans-serif;
+  outline: none;
+}
+
+.inputpassword {
+  border-color: rgb(0, 0, 0, 0.2);
+  background-image: url("/assets/img/lock.svg");
+  flex-shrink: 0;
+  background-position: 380px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--style, #000000);
+  font-family: Open Sans;
+  font-style: normal;
+  line-height: 120%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: "Open Sans", sans-serif;
+  outline: none;
+}
+
+.inputconfirmpassword {
+  border-color: rgb(0, 0, 0, 0.2);
+  background-image: url("/assets/img/lock.svg");
+  flex-shrink: 0;
+  background-position: 380px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--style, #000000);
+  font-family: Open Sans;
+  font-style: normal;
+  line-height: 120%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: "Open Sans", sans-serif;
+  outline: none;
+} */
+
+::placeholder {
+  color: #d1d1d1;
+  font-family: "Open Sans", sans-serif;
+  font-size: 19px;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.footerPelement {
+  display: inline-flex;
+  padding: 8px;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  margin-top: 50px;
+}
+
+.footerPelement:hover {
+  color: rgb(185, 182, 182);
+  cursor: pointer;
+}
+
+.arrowLeftContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 48px;
+  top: 71px;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  transition: all 125ms ease-in-out;
+  cursor: pointer;
+}
+
+.arrowLeftContainer:hover {
+  background: #d2e3ff;
+}
+
+.arrowLeft {
+  width: 32px;
+  height: 32px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.acceptPrivacy {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #666;
+}
+
+.privacyLink {
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.privacyLink:hover {
+  text-decoration: underline;
+  text-decoration-color: #d2e3ff;
+  text-decoration-thickness: 2px;
+}
+
+.signupButton {
+  display: flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--version-2-main-color, #4589ff);
+  color: #fff;
+  border: none;
+  font-size: 19px;
+  font-family: "Open Sans";
+}
+
+.signupButton:hover {
+  transition: all 125ms ease-in-out;
+  cursor: pointer;
+  background: #0066cc;
+  box-shadow: 0px 0px 10px 3px #00000014;
+}
+
+.nav-bottom {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+}
+
+.privacy-policy,
+.legal-notice {
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+
+.privacy-policy:hover,
+.legal-notice:hover {
+  color: #0038ff;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-family: "Open Sans", sans-serif;
+}
+
+.modal-message {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+.modal-content {
+  border-radius: 12px;
+  background-color: #4589ff;
+  margin: 20% auto;
+  padding: 20px;
+  width: 60%;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  color: #000000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover {
+  color: #a9a7a7;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 20% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 50%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4589ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+@media (max-width: 900px) {
+  .mainContainer {
+    width: 500px;
+  }
+  .main {
+    width: 300px;
+  }
+
+  #nem,
+  #email,
+  #password,
+  #confirmPassword {
+    width: 200px;
+  }
+
+  ::placeholder {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 750px) {
+  .mainContainer {
+    width: 10em;
+  }
+  h1 {
+    font-size: 30px;
+  }
+
+  .headerSignupImage {
+    display: none;
+  }
+  .main {
+  }
+
+  #registerBtn {
+    font-size: 14px;
+  }
+
+  .privacy-policy,
+  .legal-notice {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .mainContainer {
+    width: 6em;
+  }
+
+  .main {
+    width: 300px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  #nem,
+  #email,
+  #password,
+  #confirmPassword {
+    width: 120px;
+  }
+
+  ::placeholder {
+    font-size: 12px;
+  }
+
+  #registerBtn {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .privacy-policy,
+  .legal-notice {
+    font-size: 12px;
+  }
+}

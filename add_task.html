@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/board.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/contacts.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/icon-board.png"
+      type="image/x-icon"
+    />
+    <script src="./assets/js/tasks.js"></script>
+    <script src="./assets/js/HTMLTemplates.js"></script>
+    <script src="./assets/js/storage.js"></script>
+    <script src="./assets/js/help.js"></script>
+  </head>
+
+  <body onload="init()">
+    <!--Just for Info-->
+    <div
+      class="w3-include"
+      w3-include-html="./assets/templates/header_nav.html"
+    ></div>
+
+    <section class="main-page-task">
+      <div class="scroll-container">
+        <section class="create-task" id="createTask">
+          <div class="description">
+            <div id="titleEle">
+              <form action="">
+                <input
+                  type="text"
+                  placeholder="Enter a title"
+                  id="titleInput"
+                  class="title-input"
+                  required
+                />
+                <p class="error-message" id="titleError">
+                  Bitte fülle dieses Feld aus.
+                </p>
+              </form>
+            </div>
+            <div id="descriptionEle">
+              <h5 class="section-headers">Description</h5>
+              <input
+                type="text"
+                placeholder="Enter a description"
+                id="descriptionInput"
+                class="description-input"
+                required
+                style="
+                  text-align: left;
+                  direction: ltr;
+                  color: black;
+                  padding-top: 0;
+                  padding-bottom: 0;
+                "
+              />
+
+              <p class="error-message" id="descriptionError">
+                Bitte fülle dieses Feld aus.
+              </p>
+            </div>
+            <div id="date">
+              <h5 class="section-headers">Due Date</h5>
+              <input
+                type="date"
+                placeholder="dd/mm/yyyy"
+                class="custom-input date-input"
+                id="choosedDate"
+                required
+                min="${currentDate}"
+              />
+              <p class="error-message" id="dateError">
+                Bitte fülle dieses Feld aus.
+              </p>
+            </div>
+          </div>
+          <div id="priority" class="priority">
+            <h5 class="section-headers">Priority</h5>
+            <div class="help-div">
+              <div class="edit-priority-tasks">
+                <div class="priority-btn edit-urgent">
+                  <span>Urgent</span>
+                  <img src="./assets/img/highprio.svg" alt="" />
+                </div>
+                <div class="priority-btn edit-medium">
+                  <span>Medium</span>
+                  <img src="./assets/img/mediumprio.svg" alt="" />
+                </div>
+                <div class="priority-btn edit-low">
+                  <span>Low</span>
+                  <img src="./assets/img/lowprio.svg" alt="" />
+                </div>
+              </div>
+              <div></div>
+              <p class="error-message" id="priorityError">
+                Bitte fülle dieses Feld aus.
+              </p>
+            </div>
+          </div>
+          <div id="assignedTo" class="assigned-to-helper">
+            <h5 class="section-headers">Assigned to</h5>
+            <div onclick="renderSelectOptionsPersons()" class="add-task-assigned-to-input-wrapper">
+              <input
+                type="text"
+                readonly
+                class="assigned-to"
+                placeholder="Select contacts to assign"
+                onchange="renderSelectOptionsPersons()"
+              />
+              <img id="add-task-show-contacts-btn"
+                class="add-task-show-contacts-btn"
+                onchange="renderSelectOptionsPersons()"
+                src="./assets/img/arrow_drop_down.svg"
+              ></img>
+            </div>
+            <div class="d-none contact-list" id="contactList"></div>
+            <div id="choosedContacts"></div>
+            <div>
+              <button
+                class="d-none add-new-contact"
+                id="addNewContact"
+                onclick="openContactHTML()"
+              >
+                Add new Contact <img src="./assets/img/person_add.svg" alt="" />
+              </button>
+            </div>
+
+          </div>
+          <div class="contact-badges-container-task"></div>
+          <p class="error-message" id="assigneesError">
+            Bitte fülle dieses Feld aus.
+          </p>
+          <div id="category" class="category-helper">
+            <h5 class="section-headers">Category</h5>
+            <select
+              name="category"
+              id="selectedCategory"
+              class="category arrow-up-normal"
+              style="color: black"
+            >
+              <option value="" disabled selected style="color: black">
+                Select task Category
+              </option>
+            </select>
+            <p class="error-message" id="categoryError">
+              Bitte fülle dieses Feld aus.
+            </p>
+          </div>
+          <div id="subTasks" class="sub-task-helper">
+            <h5 class="section-headers">Subtasks</h5>
+            <div class="input-subtask-wrapper">
+              <input
+                type="text"
+                id="selectedSubtask"
+                placeholder="Add new Subtask"
+                class="sub-task"
+                required
+                style="color: black"
+              />
+              <div class="default-add-wrapper" id="default-input">
+                <img
+                  src="./assets/img/plusiconsubtask.svg"
+                  alt=""
+                  onclick="subtasksFormValidation()"
+                />
+              </div>
+              <div class="add-delete-wrapper d-none" id="add-input">
+                <img
+                  src="./assets/img/close.svg"
+                  alt=""
+                  id="close-input"
+                  class="close-input"
+                  onclick="resetInputSubtask()"
+                />
+                <img
+                  src="./assets/img/Subtask's icons.svg"
+                  alt=""
+                  class="add-input"
+                  onclick="addSubtaskToList(0, 0)"
+                />
+              </div>
+            </div>
+            <div id="showTask" class="manuel-task"></div>
+            <p class="error-message" id="subtaskError">
+              Bitte fülle dieses Feld aus.
+            </p>
+          </div>
+          <div id="renderedSubtask"></div>
+        </section>
+      </div>
+      <div class="main-page-right">
+        <div class="rendered-add-contact" id="contactForumlar"></div>
+        <div class="button-for-create">
+          <button class="search-clear-task-btn" onclick="clearTask()">
+            Clear <img src="./assets/img/add-task-plus.png" alt="" />
+          </button>
+          <button
+            class="search-add-task-task"
+            onclick="createTask()"
+            id="createTaskBtn"
+          >
+            Create Task <img src="./assets/img/add-task-plus.png" alt="" />
+          </button>
+        </div>
+      </div>
+    </section>
+    <script src="./assets/js/header_nav.js"></script>
+  </body>
+</html>

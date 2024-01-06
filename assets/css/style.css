@@ -1,0 +1,873 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  padding-bottom: 95px;
+}
+
+a {
+  font-size: 16px;
+}
+
+.section-headers {
+  margin: 24px 0 16px 0;
+}
+
+.header {
+  background-color: #4589ff;
+  height: 96px;
+}
+
+.main-page-task {
+  display: flex;
+  flex-direction: row;
+  margin-left: 232px;
+}
+
+.add-task-assigned-to-input-wrapper {
+  width: 440px;
+}
+
+.main-page-right {
+  display: flex;
+  justify-content: end;
+  width: 335px;
+  height: 61px;
+  gap: 4px;
+  bottom: 25px;
+  right: 40px;
+  align-items: flex-end;
+  position: fixed;
+  flex-direction: column;
+}
+
+.button-for-create {
+  display: flex;
+  flex-direction: row;
+}
+
+.task-menu {
+  display: flex;
+  top: 92px;
+  padding: 66px, 0px, 66px, 0px;
+  gap: 235px;
+  width: 232px;
+  flex-direction: column;
+  border-right-color: black;
+}
+
+.scroll-container {
+  width: 488px;
+  display: flex;
+  flex-direction: column;
+  top: 120px;
+  padding-left: 64px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 5px; /* Breite der Scrollleiste */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #888; /* Farbe des Scrollleisten-Thumb */
+  border-radius: 5px; /* Runde Ecken für das Scrollleisten-Thumb */
+}
+
+.create-task {
+  padding-top: 24px;
+}
+
+.title-input {
+  width: 440px;
+  height: 64px;
+  padding: 13px, 16px, 13px, 16px;
+  gap: 10px;
+  border: none;
+  border-bottom: 1px solid #d1d1d1;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38.4px;
+  color: #d1d1d1;
+}
+
+.title-input::placeholder {
+  color: #d1d1d1;
+}
+
+.description h5 {
+  margin: 0;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-size: 19px;
+}
+
+.description-input {
+  padding: 12px;
+  min-height: 103px;
+  border-radius: 0px 10px 10px 10px;
+  gap: 10px;
+  border: 1px solid #d1d1d1;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  box-sizing: border-box;
+  resize: vertical;
+  position: relative;
+  width: 440px;
+  font-size: 19px;
+}
+
+.description-input::placeholder {
+  color: #d1d1d1;
+}
+
+.contact-badges-container-task {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.date-input {
+  width: 440px;
+  height: 48px;
+  justify-content: space-between;
+  padding: 12px, 16px, 12px, 16px;
+  border: none;
+  border-bottom: 1px solid #d1d1d1;
+  font-family: "Open Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.date-input::placholder {
+  color: #d1d1d1;
+}
+
+.btn-task-div {
+  display: flex;
+  width: 440px;
+  width: 51px;
+  gap: 16px;
+}
+
+.assigned-to {
+  width: 440px;
+  height: 48px;
+  justify-content: space-between;
+  padding: 12px, 16px, 12px, 16px;
+  border: none;
+  background-color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 19px;
+}
+
+.assigned-to:hover {
+  cursor: pointer;
+}
+
+.category {
+  width: 440px;
+  height: 48px;
+  justify-content: space-between;
+  padding: 12px, 16px, 12px, 16px;
+  border: none;
+  border-bottom: 1px solid #d1d1d1;
+  color: #d1d1d1;
+  font-family: "Open Sans", sans-serif;
+  font-size: 19px;
+}
+
+.category:hover {
+  cursor: pointer;
+}
+
+.sub-task {
+  width: 440px;
+  height: 48px;
+  justify-content: space-between;
+  padding: 12px, 16px, 12px, 16px;
+  border: none;
+  border-bottom: 1px solid #d1d1d1;
+  color: #d1d1d1;
+  font-family: "Open Sans", sans-serif;
+  font-size: 19px;
+}
+
+.assigned-container {
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.assigned-container input[type="checkbox"] {
+  display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  content: url("../img/kalendericon.svg");
+  width: 18px;
+  height: 20px;
+  background: none;
+}
+
+.arrow-up {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 10px;
+  background: url("../img/arrow_drop_down.svg") no-repeat right center;
+  background-size: 24px 24px;
+  border: none;
+  margin-left: -37px;
+  width: 30px;
+}
+
+.arrow-up-normal {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  background: url("../img/arrow_drop_down.svg") no-repeat right center;
+  background-size: 24px 24px;
+}
+
+.arrow-up:focus {
+  background-image: url("../img/arrow_drop_up.svg");
+}
+
+.adding-subtask {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("../img/plusiconsubtask.svg") no-repeat right center;
+  background-size: 24px 24px;
+}
+
+.title-input:focus {
+  border: none;
+  border-bottom: 1px solid #80aeff;
+  outline: none;
+  color: #000000;
+}
+
+.description-input:focus {
+  border: 1px solid #80aeff;
+  outline: none;
+}
+
+.date-input:focus {
+  border: none;
+  border-bottom: 1px solid #80aeff;
+  outline: none;
+}
+
+.assigned-to:focus {
+  border: none;
+  border-bottom: 1px solid #80aeff;
+  outline: none;
+}
+
+.category:focus {
+  border: none;
+  border-bottom: 1px solid #80aeff;
+  outline: none;
+}
+
+.sub-task:focus {
+  border: none;
+  border-bottom: 1px solid #80aeff;
+  outline: none;
+}
+
+.contact-list {
+  display: none;
+  max-width: 440px;
+  max-height: 150px;
+  background-color: white;
+  display: flex;
+  overflow-y: scroll;
+  flex-direction: column; /* Zeige die Kontakte in einer Spalte an */
+  align-items: flex-end; /* Richte die Elemente rechts aus */
+}
+
+.contact-item {
+  display: flex;
+  align-items: center; /* Zentriere die Checkbox und den Text vertikal */
+  width: 416px;
+  padding-left: 7px;
+  padding-top: 16px;
+  padding-right: 7px;
+  padding-bottom: 16px;
+  font-weight: 400;
+  font-size: 19px;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  display: none;
+}
+
+h5 {
+  color: var(--menu-color, #42526e);
+  font-family: Open Sans;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.help-div {
+  display: flex;
+  flex-direction: column;
+  width: 440px;
+}
+
+.add-contact {
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 23px;
+  font-family: Open Sans;
+  width: 408px;
+  height: 56px;
+  border-radius: 10px;
+  border: 1px;
+  padding-left: 16px;
+  padding-top: 10px;
+  padding-right: 16px;
+  padding-bottom: 10px;
+  gap: 10px;
+  background-color: rgba(69, 137, 255, 1);
+  color: white;
+}
+
+.hidden-checkbox {
+  display: none;
+}
+
+.contact-item {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.contact-item img {
+  width: 20px;
+  height: 20px;
+}
+
+.assigned-container:hover {
+  background-color: #e3eeff;
+}
+
+.user-initials-wrapper {
+  border-radius: 50% 50%;
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user-initials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50% 50%;
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  color: #4589ff;
+  font-weight: 500;
+  border: 2px solid #4589ff;
+}
+
+.user-initials-wrapper:hover,
+.user-initials:hover {
+  background-color: #d8e5fc;
+}
+
+.assignee {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid white;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans";
+  font-size: 12px;
+  padding: 4px;
+}
+
+.add-delete-wrapper {
+  display: flex;
+  margin-left: -50px;
+  gap: 10px;
+}
+
+.add-delete-wrapper:img {
+  width: 24px;
+  height: 24px;
+}
+
+.input-subtask-wrapper {
+  display: flex;
+}
+
+.default-add-wrapper {
+  display: flex;
+  margin-left: -30px;
+}
+
+.list-element {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 27px;
+}
+
+.hover-elements {
+  display: flex;
+  padding-top: 5px;
+  gap: 10px;
+}
+
+.add-new-contact {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #4589ff;
+  border-radius: 10px;
+  border: 1px solid var(--version-2-main-color, #4589ff);
+  color: white;
+  font-family: "Open Sans";
+  font-size: 19px;
+  line-height: 1;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  width: 440px;
+  height: 40px;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.edit-priority-tasks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 440px;
+  gap: 12px;
+}
+
+.helper-for-contacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+}
+
+.helper-for-contacts:hover {
+  cursor: pointer;
+}
+
+.add-new-contact img {
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.manuel-task {
+  width: 440px;
+}
+
+.edit-task-input {
+  display: flex;
+}
+
+.contactFormular {
+  display: flex;
+  padding-top: 50px;
+  padding-left: 100px;
+  margin-bottom: 500px;
+}
+
+.search-add-task-task {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 16px 10px;
+  background-color: #4589ff;
+  border-radius: 10px;
+  border: 1px solid var(--version-2-main-color, #4589ff);
+  color: white;
+  font-family: "Open Sans";
+  font-size: 20px;
+  line-height: 1;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.search-add-task-task :hover {
+  background-color: var(--darker-blue);
+  scale: 1.02;
+  box-shadow: 0px 4px 8px 0px #00000033;
+}
+
+.assignee-choosed {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid white;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans";
+  font-size: 12px;
+  padding: 4px;
+}
+
+.search-clear-task-btn {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 16px 10px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid var(--version-2-main-color, #4589ff);
+  color: black;
+  font-family: "Open Sans";
+  font-size: 20px;
+  line-height: 1;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.search-clear-task-btn:hover {
+  border-color: var(--darker-blue);
+  scale: 1.02;
+}
+
+.join-img {
+  width: 55px;
+  height: 66px;
+  padding-top: 20px;
+}
+
+.closeButton:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.right-frame-add-task {
+  height: 600px;
+}
+
+.rendered-add-contact {
+  width: 400px;
+  justify-content: center;
+  padding-right: 300px;
+}
+
+@media (max-width: 1550px) {
+  .rendered-add-contact {
+    padding-right: 100px;
+  }
+
+  .closeButton {
+    padding-left: 240px !important;
+  }
+
+  .contact-template {
+    width: 300px;
+  }
+
+  .form-input {
+    width: 300px;
+  }
+
+  .inputs-of-contacts {
+    width: 300px !important;
+    background-position: 250px !important;
+    padding: 12px 0px !important;
+  }
+}
+
+@media (max-width: 1350px) {
+  .rendered-add-contact {
+    display: flex;
+    padding-right: 50px;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .rendered-add-contact {
+    display: flex;
+    width: 300px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .rendered-add-contact {
+    padding-right: 20px;
+    bottom: 50px;
+    position: relative;
+  }
+
+  .closeButton {
+    padding-left: 210px !important;
+  }
+
+  .contact-template {
+    width: 250px;
+  }
+
+  .form-input {
+    width: 250px;
+  }
+
+  .inputs-of-contacts {
+    width: 250px !important;
+    background-position: 200px !important;
+  }
+
+  .contactbuttonsonetwo {
+    font-size: 10px !important;
+  }
+
+  .contactbuttonsone {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 1080px) {
+  .main-page-task {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 0px;
+  }
+
+  .imgContainer {
+    margin-top: 0px;
+  }
+
+  .nav-Container {
+    bottom: 0;
+    width: 100%;
+    height: 95px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .nav-bottom {
+    display: block;
+  }
+
+  .main-page-right {
+    justify-content: center;
+    position: relative;
+    padding-top: 50px;
+  }
+
+  .scroll-container {
+    padding-left: 0;
+  }
+
+  .search-clear-task-btn {
+    display: none;
+  }
+
+  .rendered-add-contact {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 580px) {
+  .title-input {
+    width: 300px;
+  }
+
+  .description-input {
+    width: 300px;
+  }
+
+  .date-input {
+    width: 300px;
+  }
+
+  .edit-priority-tasks {
+    max-width: 300px;
+    gap: 10px;
+  }
+
+  .assigned-to {
+    width: 300px;
+  }
+
+  .contact-list {
+    width: 300px;
+  }
+
+  .add-new-contact {
+    width: 300px;
+  }
+
+  .category-helper {
+    width: 300px;
+  }
+
+  .category {
+    width: 300px;
+  }
+
+  .sub-task-helper {
+    width: 300px;
+  }
+
+  .description {
+    width: 300px;
+  }
+
+  .priority {
+    width: 300px;
+  }
+
+  .assigned-to-helper {
+    width: 300px;
+  }
+
+  .help-div {
+    width: 300px;
+  }
+  .create-task {
+    width: 300px;
+  }
+
+  .scroll-container {
+    width: 325px;
+    align-items: center;
+  }
+
+  .manuel-task {
+    width: 330px;
+  }
+
+  .main-page-right {
+    align-items: center;
+    right: 0px;
+  }
+
+  .search-clear-task-btn {
+    display: none;
+  }
+
+  .add-task-assigned-to-input-wrapper {
+    width: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  .headerFromAddContact {
+    width: 250px !important;
+  }
+}
+
+@media (max-width: 370px) {
+  .title-input {
+    width: 275px;
+  }
+
+  .description-input {
+    width: 275px;
+  }
+
+  .date-input {
+    width: 275px;
+  }
+
+  .edit-priority-tasks {
+    max-width: 275px;
+    gap: 10px;
+  }
+
+  .assigned-to {
+    width: 275px;
+  }
+
+  .contact-list {
+    width: 275px;
+  }
+
+  .add-new-contact {
+    width: 275px;
+  }
+
+  .category-helper {
+    width: 275px;
+  }
+
+  .category {
+    width: 275px;
+  }
+
+  .sub-task-helper {
+    width: 275px;
+  }
+
+  .description {
+    width: 275px;
+  }
+
+  .priority {
+    width: 275px;
+  }
+
+  .assigned-to-helper {
+    width: 275px;
+  }
+
+  .help-div {
+    width: 275px;
+  }
+  .create-task {
+    width: 275px;
+  }
+
+  .scroll-container {
+    width: 300px;
+    align-items: center;
+  }
+
+  .manuel-task {
+    width: 300px;
+  }
+
+  .scroll-container {
+    width: 250px;
+  }
+
+  .search-add-task-task {
+    width: 175px;
+  }
+}

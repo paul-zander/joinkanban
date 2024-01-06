@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
+    <link rel="stylesheet" href="./assets/css/board.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/contacts.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/icon-board.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./assets/css/add-task.css" />
+
+    <script src="./assets/js/storage.js"></script>
+  </head>
+
+  <body onload="init()">
+    <!--Just for Info-->
+    <div
+      class="w3-include"
+      w3-include-html="./assets/templates/header_nav.html"
+    ></div>
+    <main>
+      <div class="toast"></div>
+      <div class="add-task-wrapper">
+        <div class="add-task-modal-headline-wrapper">
+          <textarea
+            class="add-task-modal-headline"
+            placeholder="Enter a title"
+            required
+          ></textarea>
+        </div>
+        <p class="title-message required-message d-none" id="title-message">
+          This field is required
+        </p>
+        <div class="add-task-description">
+          <span class="add-task-span">Description</span>
+          <div class="add-task-textarea-wrapper">
+            <img
+              class="resize-handler"
+              src="./assets/img/resize-handler.svg"
+              alt=""
+            />
+            <textarea
+              class="add-task-description-textarea"
+              type="text"
+              placeholder="Enter a description"
+              required
+            ></textarea>
+          </div>
+          <p
+            class="description-message required-message d-none"
+            id="description-message"
+          >
+            This field is required
+          </p>
+        </div>
+        <div class="add-task-date">
+          <span class="add-task-span">Due date</span>
+          <input
+            class="add-task-date-input"
+            type="date"
+            placeholder=""
+            value=""
+            required
+          />
+        </div>
+        <p class="date-message required-message d-none" id="date-message">
+          This field is required
+        </p>
+        <div class="add-task-priority">
+          <span class="add-task-span">Priority</span>
+          <div class="add-task-priority-btn-wrapper">
+            <div class="add-task-priority-btn add-task-edit-urgent">
+              <span>Urgent</span>
+              <img src="./assets/img/highprio.svg" alt="" />
+            </div>
+            <div class="add-task-priority-btn add-task-edit-medium">
+              <span>Medium</span>
+              <img src="./assets/img/mediumprio.svg" alt="" />
+            </div>
+            <div class="add-task-priority-btn add-task-edit-low">
+              <span>Low</span>
+              <img src="./assets/img/lowprio.svg" alt="" />
+            </div>
+          </div>
+          <p
+            class="priority-message required-message d-none"
+            id="priority-message"
+          >
+            This field is required
+          </p>
+        </div>
+        <div class="add-task-assigned-to">
+          <span class="add-task-span">Assigned to</span>
+          <div class="add-task-assigned-to-input-wrapper">
+            <input
+              class="add-task-assigned-to-input"
+              type="text"
+              placeholder="Select contacts to assign"
+              required
+            />
+            <img
+              id="add-task-show-contacts-btn"
+              class="add-task-show-contacts-btn"
+              src="./assets/img/arrow_drop_down.svg"
+              alt=""
+              onclick="toggleContactsInAddTaskModal()"
+            />
+          </div>
+          <p
+            class="assignee-message required-message d-none"
+            id="assignee-message"
+          >
+            This field is required
+          </p>
+          <div class="add-task-assigned-to-badges d-none"></div>
+          <button class="add-task-add-contact-btn d-none">
+            Add new contact <img src="./assets/img/person_add.svg" alt="" />
+          </button>
+        </div>
+        <div class="add-task-contact-badges-container"></div>
+        <div class="add-task-category">
+          <span class="add-task-span">Category</span>
+          <div
+            class="add-task-category-wrapper"
+            onclick="toggleCategoriesInAddTaskModal()"
+          >
+            <div
+              class="select-category"
+              type="text"
+              placeholder="Select contacts to assign"
+            >
+              Select task category
+            </div>
+            <img
+              class="add-task-show-categories-btn"
+              src="./assets/img/arrow_drop_down.svg"
+              alt=""
+            />
+          </div>
+          <p
+            class="category-message required-message d-none"
+            id="category-message"
+          >
+            This field is required
+          </p>
+          <div class="category-options">
+            <div class="add-task-category-user-story">User Story</div>
+            <div class="add-task-category-technical-task">Technical Task</div>
+          </div>
+        </div>
+        <div class="add-task-edit-subtasks">
+          <span class="add-task-span">Subtasks</span>
+          <div class="add-task-subtasks-input-wrapper">
+            <input
+              class="add-task-subtasks-input"
+              type="text"
+              placeholder="Add new subtask"
+              required
+            />
+            <div class="add-task-subtasks-icons-wrapper">
+              <div class="add-task-clear-wrapper">
+                <img src="./assets/img/clear-lightblue.svg" alt="" />
+              </div>
+              <div class="add-task-subtasks-icons-divider"></div>
+              <div class="add-task-plus-wrapper">
+                <img
+                  class="add-task-subtasks-icon-add"
+                  src="./assets/img/Subtask's icons.svg"
+                  alt=""
+                />
+                <img
+                  class="add-task-subtasks-plus-icon"
+                  src="./assets/img/plusiconsubtask.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="added-subtasks"></div>
+          <div class="add-task-task-input"></div>
+          <div class="add-task-confirm-btn">
+            <!-- <button type="submit" id="board-add-task-btn" onclick="createNewTask()">Create Task <img src="./assets/img/check.svg" alt=""></button> -->
+            <button class="clear-btn" onclick="clearNewTask()">
+              Clear
+              <img src="./assets/img/x.svg" alt="" />
+            </button>
+            <button
+              class="create-task-btn"
+              type="submit"
+              id="board-add-task-btn"
+              onclick="validateForm()"
+            >
+              Create Task <img src="./assets/img/check.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./assets/js/header_nav.js"></script>
+    <script src="./assets/js/add-task.js"></script>
+    <script src="./assets/js/add-task_HTML.js"></script>
+    <script src="./assets/js/board_add-task-modal-validation.js"></script>
+  </body>
+</html>

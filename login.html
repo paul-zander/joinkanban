@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/fav_icon_blue.svg"
+      type="image/x-icon"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/login-new.css" />
+  </head>
+  <body onload="init()">
+    <div class="toast">Ich bin ein toast</div>
+    <header>
+      <img src="./assets/img/join-logo.svg" alt="" />
+      <div class="sign-up-wrapper">
+        <span>Not a Join user?</span>
+        <button class="sign-up-btn" onclick="redirectToSignUp()">
+          Sign up
+        </button>
+      </div>
+    </header>
+    <main>
+      <div class="login-form-wrapper">
+        <h1>Log in</h1>
+        <form action="">
+          <div class="email-wrapper">
+            <input
+              class="email-input"
+              type="email"
+              placeholder="Email"
+              required
+            />
+            <img src="./assets/img/mail.svg" alt="" />
+          </div>
+          <div class="password-wrapper">
+            <input
+              class="password-input"
+              type="password"
+              name=""
+              id="password-input"
+              placeholder="Password"
+              required
+            /><img
+              class="toggle-password-btn"
+              src="./assets/img/lock.svg"
+              alt=""
+              onclick="togglePassword()"
+            />
+          </div>
+        </form>
+        <!-- <div class="remember-me-wrapper">
+          <input type="checkbox" /> <span>Remember me</span>
+        </div> -->
+        <div class="btn-wrapper">
+          <button class="login-btn" onclick="loginUser()">Log in</button>
+          <button class="guest-login-btn" onclick="openSummaryHtml()">
+            Guest log in
+          </button>
+        </div>
+        <div class="sign-up-wrapper-mobile">
+          <span>Not a Join user?</span>
+          <button class="sign-up-btn" onclick="redirectToSignUp()">
+            Sign up
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <a class="privacy-policy-link" onclick="redirectToPrivacyPolicy(false)"
+        >Privacy Policy</a
+      ><a href="./legal_notice.html">Legal Notice</a>
+    </footer>
+    <script src="./assets/js/login-new.js"></script>
+  </body>
+</html>

@@ -1,0 +1,300 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.toast {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -100%;
+  color: white;
+  background: #4589ff;
+  padding: 16px;
+  border-radius: 8px;
+  transition: top 0.5s ease-in-out;
+}
+
+.toast.open {
+  top: 50px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 56px;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+.sign-up-wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.sign-up-wrapper span {
+  font-weight: 500;
+}
+
+.sign-up-wrapper-mobile {
+  display: none;
+  gap: 24px;
+  align-items: center;
+}
+
+.sign-up-btn {
+  padding: 10px 16px 10px 16px;
+  border-radius: 8px;
+  gap: 10px;
+  background: #4589ff;
+  color: white;
+  border: none;
+  font-family: "Open Sans";
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 125ms ease-in-out;
+}
+
+.sign-up-btn:hover {
+  background: #005dff;
+}
+
+main {
+}
+
+.login-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 10px 3px #00000014;
+  border-radius: 30px;
+  padding: 48px 115px 48px 115px;
+}
+
+main h1 {
+  border-bottom: 3px solid #4589ff;
+  padding: 16px;
+  font-size: 48px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 36px;
+}
+
+.email-wrapper,
+.password-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d1d1d1;
+  padding: 12px 21px 12px 21px;
+  border: 0px, 0px, 1px, 0px;
+  gap: 10px;
+  width: 100%;
+  font-size: 19px;
+}
+
+.email-input,
+.password-input {
+  border: none;
+  font-family: "Open Sans";
+  outline: none;
+  font-size: 19px;
+  width: 100%;
+}
+
+.email-input::placeholder,
+.password-input::placeholder {
+  color: #d1d1d1;
+  font-size: 19px;
+}
+
+.toggle-password-btn {
+  cursor: pointer;
+}
+
+.remember-me-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+}
+
+.login-btn {
+  padding: 10px 35px 10px 35px;
+  border-radius: 8px;
+  gap: 10px;
+  background: #4589ff;
+  border: none;
+  font-family: "Open Sans";
+  font-size: 20px;
+  color: white;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 125ms all ease-in-out;
+}
+
+.login-btn:hover {
+  background: #005dff;
+}
+
+.guest-login-btn {
+  border: 1px solid #647188;
+  padding: 10px 35px 10px 35px;
+  border-radius: 8px;
+  gap: 10px;
+  background: white;
+  font-family: "Open Sans";
+  font-size: 20px;
+  color: #647188;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 125ms all ease-in-out;
+}
+
+.guest-login-btn:hover {
+  border: 1px solid #005dff;
+  color: #005dff;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 56px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #42526e;
+}
+
+footer a:hover {
+  color: #005dff;
+}
+
+.privacy-policy-link {
+  cursor: pointer;
+}
+
+/* START: Media Queries */
+
+@media (max-width: 1200px) {
+  header {
+    padding: 20px;
+  }
+
+  footer {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 725px) {
+  .login-form-wrapper {
+    padding: 36px;
+  }
+
+  .btn-wrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .login-btn,
+  .guest-login-btn {
+    width: 200px;
+  }
+
+  .sign-up-wrapper {
+    display: none;
+  }
+
+  .sign-up-wrapper-mobile {
+    display: flex;
+  }
+
+  header img {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    justify-content: center;
+    padding: 6px;
+  }
+
+  header img {
+    height: 50px;
+    width: 50px;
+  }
+
+  form {
+    gap: 16px;
+  }
+
+  .login-form-wrapper {
+    padding: 18px;
+    gap: 12px;
+  }
+
+  .login-form-wrapper h1 {
+    font-size: 36px;
+    padding: 6px;
+  }
+
+  .email-wrapper,
+  .password-wrapper {
+    gap: 0;
+    padding: 12px 16px;
+  }
+
+  .btn-wrapper {
+    gap: 8px;
+  }
+
+  .btn-wrapper button {
+    padding: 6px;
+  }
+
+  .footer {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 350px) {
+  .email-wrapper,
+  .password-wrapper {
+    gap: 0;
+    padding: 12px 12px;
+  }
+}
+
+/* END: Media Queries */

@@ -1,0 +1,58 @@
+main {
+  margin-left: 232px;
+  align-items: start;
+  padding: 48px 96px;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 36px;
+}
+
+h1 {
+  font-size: 61px;
+}
+
+h2 {
+  font-size: 33px;
+  color: #4589ff;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+li span {
+  color: #4589ff;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+ol {
+  list-style-type: none; /* Verhindert die Anzeige der Standard-Zahlen */
+  counter-reset: my-counter; /* Setzt einen Zähler für die Liste zurück */
+}
+
+ol li {
+  counter-increment: my-counter; /* Inkrementiert den Zähler für jedes Listenelement */
+  position: relative; /* Positionierung relativ zum Elternelement (li) */
+  margin-bottom: 10px; /* Füge etwas Abstand zwischen den Listenelementen hinzu */
+}
+
+ol li::before {
+  content: counter(my-counter) "."; /* Zeigt den aktuellen Zählerwert als Inhalt an */
+  font-weight: bold; /* Optional: Macht die Zahlen fett */
+  margin-right: 5px; /* Optional: Fügt etwas Abstand zwischen Zahl und Text hinzu */
+  font-size: 24px;
+  color: #4589ff;
+}
+
+@media (max-width: 1080px) {
+  main {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 750px) {
+  main {
+    padding: 24px;
+    margin-bottom: 56px;
+  }
+}

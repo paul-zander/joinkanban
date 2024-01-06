@@ -1,0 +1,50 @@
+<script src="../js/header_nav.js"></script>
+<header>
+    <img class="logo" src="/assets/img/join-logo-white.svg" alt="">
+    <div class="header-right">
+        <span class="board-name">Kanban Project Management Tool</span>
+        <a class="help-icon" href="/help-new.html"><img class="help" src="./assets/img/help.svg" alt=""></a>
+        <div class="user-initials-wrapper" >
+            <div class="user-initials" id="user-initials-header">SM</div></div>
+            <div class="options-modal d-none" onclick="openOptions()">
+                <p onclick="window.location.href = '../legal_notice.html';"><a href="./legal_notice.html">Legal Notice</a></p>
+                <p onclick="window.location.href = '../privacy_policy.html';"><a href="./privacy_policy.html">Privacy Policy</a></p>
+                <p onclick="window.location.href = '../login.html';"><a href="./login.html">Log out</a></p>
+            </div>
+        </div>
+</header>
+<nav class="nav-Container" >
+    <div class="nav-links">
+        <a href="./summary.html">
+            <div class="summary-nav single-nav-links" >
+                <div class="nav-icons"><img src="./assets/img/icon-summary.svg" alt="" class=""></div class="nav-icons">
+                <span class="nav-texts">Summary</span>
+            </div>
+        </a>
+        <a href="./add-task.html">
+            <div class="add-task-nav single-nav-links">
+                <div class="nav-icons"><img src="./assets/img/icon-add-task.svg" alt="" class=""></div class="nav-icons">
+                <span class="nav-texts">Add Task</span>
+            </div>
+        </a>
+        <a href="./board.html">
+            <div class="board-nav single-nav-links">
+                <div class="nav-icons"><img src="./assets/img/icon-board.svg" alt="" class=""></div class="nav-icons">
+                <span class="nav-texts">Board</span>
+            </div>
+        </a>
+        <a href="./contacts.html">  
+        <div class="contacts-nav single-nav-links">
+            <div class="nav-icons"><img src="./assets/img/icon-contacts.svg" alt="" class=""></div class="nav-icons">
+            <span class="nav-texts">Contacts</span>
+        </div>
+        </a>  
+    </div>
+    <div class="nav-bottom">
+        <!-- <div  onclick="redirectToPrivacyPolicy()" class="privacy-policy">Privacy Policy</div>
+        <div onclick="redirectToLegalNotice()" class="legal-notice">Legal notice</div> -->
+        <div  onclick="redirectToPrivacyPolicy()" class="privacy-policy">Privacy Policy</div>
+        <div onclick="redirectToLegalNotice()" class="legal-notice">Legal notice</div>
+    </div>  
+</nav>
+

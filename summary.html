@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <link rel="shortcut icon" href="./assets/img/fav_icon_blue.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/board.css">
+    <link rel="stylesheet" href="./assets/css/summary.css">
+    <script src="./assets/js/storage.js"></script>
+    <!-- <script src="./assets/js/login.js"></script> -->
+</head>
+
+<body onload="initSummary()">
+    <div class="w3-include" w3-include-html="./assets/templates/header_nav.html"></div>
+    <main class="main-summary">
+        <div class="wrapper">
+            <div class="greeting">
+                <span class="greeting-goodmorning" id="greeting"></span>
+                <span class="greeting-name" id="greeting-name"></span>
+            </div>
+            <div class="middle">
+                <div class="urgency" onclick="window.location.href = 'board.html';">
+                    <div class="urgency-left">
+                        <div class="tasks-urgent">
+                            <div class="icon-and-counter">
+                                <img id="urgent-img" src="./assets/img/summary-urgent-icon.svg" alt="">
+                                <span id="urgent-counter">1</span>
+                            </div>
+                            <span class="urgency-span">Tasks Urgent</span>
+                        </div>
+                    </div>
+                    <div class="urgency-divider"></div>
+                    <div class="urgency-date">
+                        <span id="urgency-deadline">October 16, 2022</span>
+                        <span id="urgency-text">Upcoming Deadline</span>
+                    </div>
+                </div>
+                <div class="tasks-todo" onclick="window.location.href = 'board.html';">
+                    <div class="icon-and-counter">
+                        <img src="./assets/img/summary-todo-icon.svg" alt="">
+                        <span class="counter" id="todo-counter">1</span>
+                    </div>
+                    <span class="counter-description">Tasks To-do</span>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="counter-wrapper tasks-in-board" onclick="window.location.href = 'board.html';">
+                    <div class="icon-and-counter">
+                        <img src="./assets/img/summary-board-icon.svg" alt="">
+                        <span class="counter" id="in-board-counter">5</span>
+                    </div>
+                    <span class="counter-description">Tasks in <br>Board</span>
+                </div>
+                <div class="counter-wrapper tasks-in-progress" onclick="window.location.href = 'board.html';">
+                    <div class="icon-and-counter">
+                        <img src="./assets/img/summary-inprogress-icon.svg" alt="">
+                        <span class="counter" id="in-progress-counter">1</span>
+                    </div>
+                    <span class="counter-description">Tasks in <br>Progress</span>
+                </div>
+                <div class="counter-wrapper tasks-awaiting-feedback" onclick="window.location.href = 'board.html';">
+                    <div class="icon-and-counter">
+                        <img src="./assets/img/summary-awaitingfeedback-icon.svg" alt="">
+                        <span class="counter" id="awaiting-feedback-counter">2</span>
+                    </div>
+                    <span class="counter-description">Awaiting <br>Feedback</span>
+                </div>
+                <div class="counter-wrapper tasks-done" onclick="window.location.href = 'board.html';">
+                    <div class="icon-and-counter">
+                        <img src="./assets/img/summary-done-icon.svg" alt="">
+                        <span class="counter" id="done-counter">1</span>
+                    </div>
+                    <span class="counter-description">Tasks <br>Done</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./assets/js/summary.js"></script>
+    <script src="./assets/js/header_nav.js"></script>
+</body>
+</html>
